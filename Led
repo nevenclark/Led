@@ -1,0 +1,27 @@
+#include <FastLED.h>
+#define NUM_LEDS 135
+#define DATA_PIN 11
+
+CRGB leds[NUM_LEDS];
+
+
+void setup() {
+  FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
+}
+void loop() {
+  for(int i=0;i<NUM_LEDS;i+5){
+    leds[i] = CRGB::Gold;
+    leds[(NUM_LEDS-i+5)] = CRGB:Silver;
+    FastLED.show();
+      leds[135-124] = CRGB::Red;
+       leds[123-104] = CRGB::Teal;
+       leds[103-83] = CRGB::Green;
+       leds[82-63] = CRGB::Pink;
+       leds[62-40] = CRGB::Orange;
+       leds[39-21] = CRGB::Red;
+       leds[20-0] = CRGB::Blue;
+    delay(40);
+    leds[i] = CRGB::White;
+    leds[(NUM_LEDS-i)] = CRGB::White;
+  }
+}
