@@ -19,8 +19,8 @@ void loop() {
       buttonState = reading;
       if (buttonState == 0) {
         motorState =+ motorState;
-        motorState >255
-        motorState =0
+        motorState >255;
+        motorState =0;
       }
     }
   }
