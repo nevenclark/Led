@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(void)
+{  
+    float avg = 0;
+    float sum = 0;
+    float earned = 0;
+    float possible;
+     int i=0;
+    
+        printf("number of assignments: ");/*declares the array*/
+            scanf("%i", &
+                  i);
+    float num[i];  /*uses a for loop to move across the array */
+    
+         int x=0; /*the i puts the declararion of the array to make more memory*/
+    
+    for(x=0;x<i;x++){
+        printf("points earned on assignment %d? \n",(x+1));/*the funtion asks for how many points did you earn on the assignment of %d*/
+            scanf("%f", &earned);
+        printf("points possible on assignment %d?\n", (x+1));/*it asks for the possible points of the assignment of %d which is pulling a digit from an array*/ 
+            scanf("%f", &possible);
+        num[x] =earned/possible*100;/*it does the calculation and finds the fraction version of the average */
+        }
+    for(x=0;x<i;x++){
+        sum= sum+num[x];/*adds the sum of the assignments and the fraction version to find out the percentsge of the assignment*/
+        }
+        avg=sum/i;/*it grabs the average of th sum+num[x] and dividing it by the number of the amount of the assignments*/
+            printf("your average grade is: %f %%\n", avg);
+                return 0;
+}
