@@ -5,7 +5,7 @@ const int motorPin = 10;      // the number of the LED pin
 // Variables will change:
 int motorState = 0;         // the current state of the output pin
 int buttonState;             // the current reading from the input pin
-int lastButtonState = HIGH;   // the previous reading from the input pin
+int lastButtonState = LOW;   // the previous reading from the input pin
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -22,7 +22,7 @@ void setup() {
 
 void loop() {
   // read the state of the switch into a local variable:
-  int reading = analogRead(buttonPin);
+  int reading = digitalRead(buttonPin);
 
   // check to see if you just pressed the button
   // (i.e. the input went from LOW to HIGH), and you've waited long enough
@@ -48,9 +48,10 @@ void loop() {
       }
        if (motorState >255){
         motorState =0;
+       }
     }
   }
-
+  
   // set the LED:
   analogWrite(motorPin, motorState);
 
